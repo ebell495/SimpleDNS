@@ -9,10 +9,7 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
     struct Message msg;
     memset(&msg, 0, sizeof(struct Message));
 
-    if (decode_msg(&msg, Data, Size) == 0) {
-        uint8_t* buffer = (uint8_t*) malloc((Size + 1) * 16);
-        encode_msg(&msg, &buffer);
-    }
+    decode_msg(&msg, Data, Size)
 
     if (msg.questions)
         free_questions(msg.questions);
