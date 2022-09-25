@@ -1,0 +1,6 @@
+project: simpledns
+target: dns-message-fuzzer
+
+cmds:
+    - cmd: ./dns-message-fuzzer
+      libfuzzer: true
